@@ -33,36 +33,3 @@ def produce_mid(url):
 if __name__ == "__main__":
     url = 'https://wallstreetcn.com/vip/articles/3440500'
     print(get_html(url))
-
-# client = pymongo.MongoClient('118.244.212.178', 47017)
-# # 连接所需数据库,test为数据库名
-# db = client.spider
-# db.authenticate('spiderteam', 'wodespider2018')
-# my_set = db.nullcontent
-# # 连接所用集合
-# # small = myset.find({'title': {'$exists': True}, '$where': "(this.title.length < 7)"})
-# # small = db.content.find({'title': re.compile('Î')})
-# # small = db.content.find({'title': {'$type':'object'}})
-# # small = db.content.find({'title': '48小时点击排行'})
-# small = my_set.find({'is_regular_content_url': False, 'null_publishDateStr': True})
-#
-# num = 1
-# for item in small:
-#     try:
-#         id = item['_id']
-#         url = item['url']
-#         response = requests.get(url, headers=header)
-#         updata = Document(response.content, response.url).together()
-#         if not updata['publishDateStr']:
-#             print(url)
-#             continue
-#         print(id, updata)
-#         db.content.update({'_id': id}, {'$set': {'title': updata['title'],
-#                                                       'publishDateStr': updata['publishDateStr'],
-#                                                       'publishDate': updata['publishDate']}})
-#         print('success update %s'% num)
-#         my_set.delete_one({'_id': id})
-#         print('success delete %s' % num)
-#         num += 1
-#     except:
-#         print('Extractor filed ----------------------')
