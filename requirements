@@ -1,0 +1,6 @@
+nose
+coverage
+
+python = 3.x
+chardet
+
